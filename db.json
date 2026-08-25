@@ -1,4 +1,26 @@
 {
-  "users": [],
-  "blogs": []
+  "users": [
+    {
+      "id": 1787534634151,
+      "name": "Sonal",
+      "email": "sonal@test.com",
+      "password": "123456"
+    }
+  ],
+  "blogs": [
+    {
+      "id": 1787535691661,
+      "title": "My First Blog",
+      "content": "This is my first blog",
+      "author": "Sonal",
+      "createdAt": "2026-08-24T01:41:31.661Z"
+    },
+    {
+      "id": 1787583332063,
+      "title": "My First Blog",
+      "content": "This is my first blog",
+      "author": "Sonal",
+      "createdAt": "2026-08-24T14:55:32.063Z"
+    }
+  ]
 }
