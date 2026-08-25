@@ -88,7 +88,11 @@ app.get("/api/blogs/:id", (req, res) => {
   if (!blog) return res.status(404).json({ message: "Blog not found" });
   res.json(blog);
 });
-
+app.use(express.json());
+app.use(cors());
+app.get("/",(req,res)=>{
+  res,json({message:"MyBlog API is running"});
+});
 app.listen(PORT, () => {
   console.log(`MyBlog Backend running at http://localhost:${PORT}`);
 });
