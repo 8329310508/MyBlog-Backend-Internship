@@ -6,7 +6,8 @@ const path = require("path");
 const app = express();
 const PORT = 3000;
 const DB_FILE = path.join(__dirname, "db.json");
-
+const jwt=require("jsonwebtoken");
+const authMiddleware=require("./middleware/authMiddleware");
 app.use(cors());
 app.use(express.json());
 
@@ -53,14 +54,22 @@ app.post("/api/login", (req, res) => {
   );
 
   if (!user) return res.status(401).json({ message: "Invalid email or password" });
+const token =jwt.sign(
+  {
+    id:user.id,name:user.name,email:user.email
+  },
+  process.env.JWT_SECRET || "mysecretkey", 
+  
+);
 
   res.json({
     message: "Login successful",
+    token:token,
     user: { id: user.id, name: user.name, email: user.email }
   });
 });
 
-app.post("/api/blogs", (req, res) => {
+app.post("/api/blogs", authMiddleware,(req, res) => {
   const { title, content, author } = req.body;
   if (!title || !content || !author)
     return res.status(400).json({ message: "Title, content and author are required" });
@@ -79,7 +88,7 @@ app.post("/api/blogs", (req, res) => {
   res.status(201).json({ message: "Blog created successfully", blog });
 });
 
-app.get("/api/blogs", (req, res) => {
+app.get("/api/blogs",authMiddleware, (req, res) => {
   res.json(readDB().blogs);
 });
 

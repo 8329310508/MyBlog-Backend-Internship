@@ -5,6 +5,18 @@
       "name": "Sonal",
       "email": "sonal@test.com",
       "password": "123456"
+    },
+    {
+      "id": 1787725658334,
+      "name": "Sonal",
+      "email": "sonal123@gmail.com",
+      "password": "123456"
+    },
+    {
+      "id": 1787823122873,
+      "name": "Sonal",
+      "email": "sonalpatil6041@gmail.com",
+      "password": "sonal@666"
     }
   ],
   "blogs": [
@@ -21,6 +33,20 @@
       "content": "This is my first blog",
       "author": "Sonal",
       "createdAt": "2026-08-24T14:55:32.063Z"
+    },
+    {
+      "id": 1787825227660,
+      "title": "My First Blog",
+      "content": "This is my first blog post",
+      "author": "Sonal",
+      "createdAt": "2026-08-27T10:07:07.660Z"
+    },
+    {
+      "id": 1787825847958,
+      "title": "My Second Blog",
+      "content": "This is my second blog ",
+      "author": "Sonal",
+      "createdAt": "2026-08-27T10:17:27.958Z"
     }
   ]
 }
